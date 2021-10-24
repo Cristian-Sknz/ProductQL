@@ -1,0 +1,33 @@
+# Models
+type Product {
+    id: ID!,
+    name: String,
+    price: Float,
+    category: Category
+}
+
+enum Category {
+    FOOD
+    UTILITY
+    AUTOMOTIVE
+    HOME_APPLIANCES
+    UNDEFINED
+}
+
+#Inputs
+input ProductInput {
+    name: String,
+    price: Float,
+    category: Category
+}
+
+# Queries
+type Query {
+    getAllProducts: [Product],
+    getProductById(id: Int): Product
+}
+# Mutations
+type Mutation {
+    saveProduct(product: ProductInput): Product,
+    deleteProduct(id: Int): Boolean
+}

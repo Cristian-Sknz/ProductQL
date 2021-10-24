@@ -1,0 +1,21 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2console
+  datasource:
+    ## banco de dados em memoria
+    url: jdbc:h2:mem:products
+    username: sknz
+    password: h2database
+    driver-class-name: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+graphql:
+  servlet:
+    corsEnabled: true
+    enabled: true
+    mapping: /graphql
